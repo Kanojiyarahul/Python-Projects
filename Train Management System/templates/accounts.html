@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-image:url({{url_for('static',filename='train4.jpg')}})
+
+            }
+            h1{
+	          	color:  red;
+	          }
+        </style>
+                <img src="static/trainlogo4.png"  width="100" height="65" alt="logo"></img>	
+
+    <body>
+
+<div align="center">
+    <h1>Welcome to All Accounts</h1>
+    <!--<table border="1px" cellspacing="10"></table>!-->
+    
+    <div class="container">
+      <div class="row">
+        <div class="col md-12">
+          <div class="jumbotron p-3">
+          
+              <table border="1px" cellspacing="10">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">FullName</th>
+                    <th scope="col">Username </th>
+                    <th scope="col">password</th>
+                    <th scope="col">Email </th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+              <tbody>
+                    {% for tup in alist%}
+                  <tr>
+                    <td>{{tup[0]}}</td>
+                    <td>{{tup[1]}}</td>
+                    <td>{{tup[2]}}</td>
+                    <td>{{tup[3]}}</td>
+                    <td>{{tup[4]}}</td>
+    
+                    <td>
+                      <a class="btn btn-danger" href="/accountdelete/{{tup[0]}}"> Delete </a>
+                      <a class="btn btn-warning" href="/accountupdate/{{tup[0]}}"> Update </a>
+                    </td>
+                  </tr>
+                    {% endfor %}
+              </tbody>
+              </table>
+              <br>
+              <br>
+              <form>
+                <input type="button" value="go back!" onclick="history.go(-1)">
+            </form>
+          </div>
+        </div>
+      </div> 
+    </div>
+    </body>
+</html>
+    

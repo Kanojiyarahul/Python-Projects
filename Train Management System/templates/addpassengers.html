@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-image:url({{url_for('static',filename='train4.jpg')}})
+
+            }
+			h1{
+				color:  red;
+			}
+        </style>
+				 <img src="static/trainlogo4.png"  width="100" height="65" alt="logo"></img>	
+
+    <body>
+
+<div align="center">
+		<h1>Add Passenger</h1>
+		<form action="/passengeradd" method="POST">
+			<table>
+				<tr>
+					<td>PNR</td>
+					<td><input type="text" name="pnrno" placeholder="Enter your PNR" required></td>
+				</tr>
+				
+				<tr>
+					<td>Fullname</td>
+					<td><input type="text" name="pname" placeholder="Enter your FullName" required></td>
+				</tr>
+				<tr>
+					<td>Age</td>
+					<td><input type="text" name="age"  placeholder="Enter your Age" required></td>
+				</tr>
+				<tr>
+					<td>Train Number</td>
+					<td><input type="text" name="ptrainno"  placeholder="Enter your Train no" required></td>
+				</tr>
+				<tr>
+					<td>Train Name</td>
+					<td><input type="text" name="ptrainname"  placeholder="Enter your Train name"required></td>
+				</tr>
+                <tr>
+					
+					<td>Class</td>
+					<td><input type="text" name="pclass"  placeholder="Enter your Class"required></td>
+					
+				</tr>
+                <tr>
+					<td>Source</td>
+					<td><input type="text" name="psource"  placeholder="Enter your Source"required></td>
+				</tr>
+                <tr>
+					<td>Destination</td>
+					<td><input type="text" name="pdest"  placeholder="Enter your Destination"required></td>
+				</tr>
+                <tr>
+					<td>Fare</td>
+					<td><input type="text" name="pamt"  placeholder="Enter your Fare"required></td>
+				</tr>
+                <tr>
+					<td>DOJ</td>
+					<td><input type="date" name="pdoj"  placeholder="Enter your Status"required></td>
+				</tr>
+                <tr>
+					<td>Status</td>
+					<td><input type="text" name="pstatus"  placeholder="Enter your Status"required></td>
+				</tr>
+                
+				<tr>
+					<td><input type="submit" value="Add"></td>
+					<td><input type="reset" value="Reset"></td>
+				</tr>
+			</table>
+			<br>
+				<td><input type="button" value="go back!" onclick="history.go(-1)"></td>
+		</form>
+</div>
+	</body>
+	</head>
+</html>

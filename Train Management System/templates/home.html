@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-image:url({{url_for('static',filename='image1.jpg')}})
+                
+
+            }
+            h1{
+		        color:  red;
+	        }
+            
+        </style>
+                <img src="static/trainlogo4.png"  width="100" height="65" alt="logo"></img>	
+
+    </head>
+    <body>
+
+<div align="center">
+        <h1>Welcome to Torbo Traveller</h1>
+
+<h1><a href="/showaccounts">Show Accounts</a></h1>
+<h1><a href="/passengeradd">Add Passenger</a></h1>
+<h1><a href="/passengerlist">Show Passengerlist</a></h1>
+    <form>
+        <input type="button" value="go back!" onclick="history.go(-1)">
+    </form>
+    
+</div>
+     </body>
+</html>
+
+
+
+

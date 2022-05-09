@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-image:url({{url_for('static',filename='train4.jpg')}})
+
+            }
+			h1{
+				color:  red;
+			}
+        </style>
+    
+	</head>
+    <body>
+
+<div align="center">
+		<h1>Update Account</h1>
+		<form action="/accountupdate/{{account[0]}}" method="POST">
+			<table>
+				
+				<tr>
+					<td>Fullname</td>
+					<td><input type="text" name="fullname" placeholder="Enter your FullName" value="{{account[1]}}" required></td>
+				</tr>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="username"  placeholder="Enter your Username" value="{{account[2]}}"required></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"  placeholder="Enter your Password" value="{{account[3]}}" required></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" name="email"  placeholder="Enter your Email" value="{{account[4]}}" required></td>
+				</tr>
+                
+				<tr>
+					<td><input type="submit" value="Update"></td>
+				</tr>
+			</table>
+			<br>
+				<input type="button" value="go back!" onclick="history.go(-1)">
+			</form>
+
+	
+</div>
+	</body>
+</html>

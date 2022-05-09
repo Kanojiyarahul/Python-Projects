@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                background-image:url({{url_for('static',filename='image1.jpg')}})
+            }
+            h1{
+		          color:  red;
+	          }
+        </style>
+        		  <img src="static/trainlogo4.png"  width="100" height="65" alt="logo"></img>	
+    </head>
+    <body>   
+<div align="center">
+<h1>Welcome to All Passengers List</h1>
+<!--<table border="1px" cellspacing="10"></table>!-->
+
+<div class="container">
+  <div class="row">
+    <div class="col md-12">
+      <div class="jumbotron p-3">
+      
+          <table border="1px" cellspacing="10">
+            <thead>
+              <tr>
+                <th scope="col">PNR No</th>
+                <th scope="col"> Name</th>
+                <th scope="col"> Age </th>
+                <th scope="col">Train No</th>
+                <th scope="col">Train Name</th>
+                <th scope="col">Class</th>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Fare</th>
+                <th scope="col">Status</th>
+                <th scope="col">DOJ</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+          <tbody>
+                {% for passenger in plist%}
+              <tr>
+                <td>{{passenger[0]}}</td>
+                <td>{{passenger[1]}}</td>
+                <td>{{passenger[2]}}</td>
+                <td>{{passenger[3]}}</td>
+                <td>{{passenger[4]}}</td>
+                <td>{{passenger[5]}}</td>
+                <td>{{passenger[6]}}</td>
+                <td>{{passenger[7]}}</td>
+                <td>{{passenger[8]}}</td>
+                <td>{{passenger[9]}}</td>
+                <td>{{passenger[10]}}</td>
+                <td>
+                  <a class="btn btn-danger" href="/passengerdelete/{{passenger[0]}}"> Delete </a>
+                  <a class="btn btn-warning" href="/passengerupdate/{{passenger[0]}}"> Update </a>
+                </td>
+              </tr>
+              
+                {% endfor %}
+          </tbody>
+          </table>
+      </div>
+    </div>
+  </div> 
+</div>
+<br>
+<tr>
+<form>
+  <td><input type="button" value="go back!" onclick="history.go(-1)"></td>
+</form>
+</tr>
+ 
+  </body>
+</html>
