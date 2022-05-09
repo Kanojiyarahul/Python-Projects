@@ -1,0 +1,29 @@
+<h1>Welcome to All users Page</h1>
+
+<table border="1px" cellspacing="10">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Contact</th>
+		<th>Email</th>
+		<th>Password</th>
+		<th>Action</th>
+	</tr>
+
+	{% for tup in elist %}
+		<tr>
+			<td>{{tup[0]}}</td>
+			<td>{{tup[1]}}</td>
+			<td>{{tup[2]}}</td>
+			<td>{{tup[3]}}</td>
+			<td>{{tup[4]}}</td>
+			<td>
+				<a href="editEmp?id={{tup[0]}}">Edit</a>
+				<a href="deleteEmp?id={{tup[0]}}">Delete</a>
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+
+<h1><a href="/">Home</a></h1>
+<h1><a href="reg">Registration Form</a></h1>
